@@ -65,7 +65,7 @@ const STATUS_CONFIG: Record<
 };
 
 function StatusBadge({ status }: { status: DeploymentStatus }) {
-  const config = STATUS_CONFIG[status];
+  const config = STATUS_CONFIG[status] ?? STATUS_CONFIG.pending;
   return (
     <span
       className={cn(
@@ -98,7 +98,7 @@ const ENVIRONMENT_CONFIG: Record<
 };
 
 function EnvironmentBadge({ environment }: { environment: Deployment["environment"] }) {
-  const config = ENVIRONMENT_CONFIG[environment];
+  const config = ENVIRONMENT_CONFIG[environment] ?? ENVIRONMENT_CONFIG.development;
   return (
     <span
       className={cn(

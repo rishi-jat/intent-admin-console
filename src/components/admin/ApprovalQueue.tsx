@@ -116,8 +116,8 @@ function ApprovalCard({
   onReject,
   state,
 }: ApprovalCardProps) {
-  const priorityConfig = PRIORITY_CONFIG[approval.priority];
-  const typeConfig = TYPE_CONFIG[approval.type];
+  const priorityConfig = PRIORITY_CONFIG[approval.priority] ?? PRIORITY_CONFIG.low;
+  const typeConfig = TYPE_CONFIG[approval.type] ?? TYPE_CONFIG.deployment;
 
   const isProcessing = state === "approving" || state === "rejecting";
   const isProcessed = state === "approved" || state === "rejected";

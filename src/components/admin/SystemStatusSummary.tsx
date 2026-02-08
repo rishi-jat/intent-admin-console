@@ -119,7 +119,7 @@ interface ServiceCardProps {
 }
 
 function ServiceCard({ service, showMetrics }: ServiceCardProps) {
-  const statusConfig = STATUS_CONFIG[service.status];
+  const statusConfig = STATUS_CONFIG[service.status] ?? STATUS_CONFIG.unknown;
 
   return (
     <div className="border border-border rounded-lg p-4 bg-card hover:bg-muted/20 transition-colors">
@@ -185,7 +185,7 @@ function OverallStatusBanner({
   serviceCount,
   healthyCount,
 }: OverallStatusBannerProps) {
-  const statusConfig = STATUS_CONFIG[status];
+  const statusConfig = STATUS_CONFIG[status] ?? STATUS_CONFIG.unknown;
 
   const getMessage = () => {
     switch (status) {
