@@ -1,10 +1,8 @@
 # Intent-Driven Internal Admin Console
 
-**A production-quality admin console where users express intent and the UI becomes the response.**
+A constrained, intentional demonstration of an admin console where user intent drives UI rendering. Users express intent via chat input, and components respond with relevant data views and actions.
 
-Built with [Tambo's Generative UI SDK](https://tambo.co). Say "show failed deployments" and get a deployment table with retry actions—not a text explanation of what you could do. The chat input captures intent; components deliver outcomes.
-
-**Supported intents:** deployment monitoring, deployment failures, operational approvals, system health. Everything else renders a graceful fallback explaining what IS supported.
+Built with [Tambo's Generative UI SDK](https://tambo.co). The system maps specific intents to UI components, enabling focused interactions such as deployment monitoring, approval workflows, and system health status.
 
 ---
 
@@ -168,43 +166,23 @@ User: "Book a meeting"
 - **Zod** (Schema validation)
 - **Tailwind CSS** (Styling)
 
-## Non-Goals
+## Explicit Non-Goals
 
-This project explicitly **does not** attempt:
-
-1. **General-purpose app building** — Only the four defined intent categories are supported. This is a bounded demonstration of intent → UI mapping, not an extensible platform.
-
-2. **Production API integrations** — All data is mock. The focus is on component architecture and intent classification, not API reliability.
-
-3. **User authentication or RBAC** — No login, no role-based access. Authentication is orthogonal to the generative UI pattern.
-
-4. **Real-time data streaming** — Health checks and deployment status are static snapshots. WebSocket/polling would obscure the core demo.
-
-5. **Multi-tenant or multi-environment support** — Single namespace, single dataset. Complexity is intentionally minimized.
+- General-purpose app building
+- Production API integrations
+- User authentication or RBAC
+- Real-time data streaming
+- Multi-tenant or multi-environment support
 
 ## Limitations
 
-This is a **scoped demonstration**, not a complete admin platform.
+This demo is intentionally constrained to highlight intent-driven UI behavior:
 
-### What This Is Not
-- **Not a generic app builder** - Only supports the four defined intent categories
-- **Not production-ready** - Uses mock data, not real APIs
-- **Not authenticated** - No user auth system (out of scope)
-- **Not horizontally scalable** - Single-instance design
-
-### Known Constraints
-1. **Mock data only** - All data comes from hardcoded mock objects in `tools.ts`
-2. **No persistence** - Actions (approve, retry) are simulated with console logs
-3. **No real-time updates** - Health data is static, not polling
-4. **Single environment** - No multi-tenant or environment switching
-5. **Limited action handling** - Actions trigger visual feedback but don't modify state
-
-### Future Work (Not Implemented)
-- Real API integrations
-- WebSocket for live updates
-- User authentication and RBAC
-- Audit logging
-- Multi-environment support
+- Mock data only: All data is sourced from hardcoded mock objects in `tools.ts`.
+- No persistence: Actions (approve, retry) simulate behavior with console logs without modifying state.
+- Static data: Health and deployment status do not update in real time.
+- Single environment: Designed for a single namespace and dataset.
+- Limited action handling: Actions provide visual feedback without backend effects.
 
 ## License
 
